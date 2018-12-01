@@ -49,6 +49,7 @@ namespace CodeAssignment.Provider
                             temp.WorkNo = model.WorkNo;
                             temp.HomeNo = model.HomeNo;
                             temp.MobileNo = model.MobileNo;
+                            temp.Gender = model.Gender;
                             temp.UpdatedOn = DateTime.UtcNow;
                             db.Entry(temp).State = System.Data.Entity.EntityState.Modified;
                         }
