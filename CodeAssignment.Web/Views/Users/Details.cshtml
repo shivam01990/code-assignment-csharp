@@ -39,7 +39,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Gender)
+            @Html.Raw(Model.Gender == true ? "Male" : "Female")
         </dd>
 
         <dt>
