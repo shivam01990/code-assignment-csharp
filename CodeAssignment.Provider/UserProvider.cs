@@ -50,12 +50,14 @@ namespace CodeAssignment.Provider
                             temp.HomeNo = model.HomeNo;
                             temp.MobileNo = model.MobileNo;
                             temp.Gender = model.Gender;
+                            temp.Dob = model.Dob;
                             temp.UpdatedOn = DateTime.UtcNow;
                             db.Entry(temp).State = System.Data.Entity.EntityState.Modified;
                         }
                     }
                     else
                     {
+                        model.CreatedOn = DateTime.UtcNow;
                         db.Users.Add(model);
                     }
 

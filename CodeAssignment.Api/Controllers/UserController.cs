@@ -21,15 +21,15 @@ namespace CodeAssignment.Api.Controllers
 
         // GET: api/User
         [HttpGet]
-        public JsonResult<List<UserEntity>> Get()
+        public List<UserEntity> Get()
         {
-            return Json<List<UserEntity>>(_userService.GetAllUsers());
+            return _userService.GetAllUsers();
         }
 
         // GET: api/User/5
-        public JsonResult<UserEntity> Get(int id)
+        public UserEntity Get(int id)
         {
-            return Json<UserEntity>(_userService.GetUser((int)id));
+            return _userService.GetUser((int)id);
         }
 
         // POST: api/User

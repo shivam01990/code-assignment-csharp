@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Dob, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Dob, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.Dob, new { @Value = (Model.Dob == null )? "":((DateTime)Model.Dob).ToString("MM/dd/yyyy"), @class = "datepicker form-control" })
                 @Html.ValidationMessageFor(model => model.Dob, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -81,7 +81,7 @@
                 @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />

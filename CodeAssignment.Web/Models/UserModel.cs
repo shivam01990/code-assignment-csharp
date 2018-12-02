@@ -1,6 +1,7 @@
 ﻿using CodeAssgnment.Shared;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -29,23 +30,33 @@ namespace CodeAssignment.Web.Models
         public int Id { get; set; }
 
         [Required]
-        [Range(3, 50, ErrorMessage = "Enter number between 3 to 50")]
+        [StringLength(maximumLength:50, MinimumLength =3, ErrorMessage = "Enter charecters between 3 to 50")]
         public string ForeNames { get; set; }
 
         [Required]
-        [Range(2, 50, ErrorMessage = "Enter number between 2 to 50")]
+        [StringLength(maximumLength: 50, MinimumLength =2 , ErrorMessage = "Enter charecters between 2 to 50")]
         public string SurName { get; set; }
 
+        [DisplayName("Date of Birth")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]        
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? Dob { get; set; }
 
         [Required]
         public bool Gender { get; set; }
 
+        [DisplayName("Home Number")]
+        [DataType(DataType.PhoneNumber)]
         public string HomeNo { get; set; }
+
+        [DisplayName("Work Number")]
+        [DataType(DataType.PhoneNumber)]
         public string WorkNo { get; set; }
+
+        [DisplayName("Mobile Number")]
+        [DataType(DataType.PhoneNumber)]
         public string MobileNo { get; set; }
+
         public DateTime? CreatedOn { get; set; }
         public DateTime? UpdatedOn { get; set; }
 
